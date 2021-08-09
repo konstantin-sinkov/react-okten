@@ -1,0 +1,18 @@
+.character {
+    width: 70%;
+    padding: 20px;
+    background-color: lightgray;
+    margin: 20px auto;
+}
+
+.character:first-child {
+    margin-top: 0;
+}
+
+.character:last-child {
+    margin-bottom: 0;
+}
+
+p {
+    margin-top: 20px
+}
