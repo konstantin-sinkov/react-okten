@@ -1,3 +1,10 @@
+Repo for tasks on React!
+
+Each task is in a different branch
+(lesson 1-1 - homework for lesson 1, lesson 1-2 - classwork, lesson 1-3 - additional)
+
+#######################################################################################
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
