@@ -6,7 +6,7 @@ export default function User(props) {
     let {id, name, surname, email, phone, website, address, company} = props;
 
     return(
-      <div className={'user_block'}>
+      <div className={'user_item'}>
           <h2>{name} {surname}</h2>
           <h3>user.id - {id}</h3>
           <h4>user email - {email}</h4>

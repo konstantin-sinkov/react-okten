@@ -244,7 +244,7 @@ let usersList = [
 
 function App() {
   return (
-    <div>
+    <div className={'user_wrapper'}>
       <User
           id={usersList[0].id}
           name={usersList[0].name}
@@ -254,6 +254,96 @@ function App() {
           website={usersList[0].website}
           address={usersList[0].address}
           company={usersList[0].company}
+      />
+      <User
+          id={usersList[1].id}
+          name={usersList[1].name}
+          surname={usersList[1].surname}
+          email={usersList[1].email}
+          phone={usersList[1].phone}
+          website={usersList[1].website}
+          address={usersList[1].address}
+          company={usersList[1].company}
+      />
+      <User
+          id={usersList[2].id}
+          name={usersList[2].name}
+          surname={usersList[2].surname}
+          email={usersList[2].email}
+          phone={usersList[2].phone}
+          website={usersList[2].website}
+          address={usersList[2].address}
+          company={usersList[2].company}
+      />
+      <User
+          id={usersList[3].id}
+          name={usersList[3].name}
+          surname={usersList[3].surname}
+          email={usersList[3].email}
+          phone={usersList[3].phone}
+          website={usersList[3].website}
+          address={usersList[3].address}
+          company={usersList[3].company}
+      />
+      <User
+          id={usersList[4].id}
+          name={usersList[4].name}
+          surname={usersList[4].surname}
+          email={usersList[4].email}
+          phone={usersList[4].phone}
+          website={usersList[4].website}
+          address={usersList[4].address}
+          company={usersList[4].company}
+      />
+      <User
+          id={usersList[5].id}
+          name={usersList[5].name}
+          surname={usersList[5].surname}
+          email={usersList[5].email}
+          phone={usersList[5].phone}
+          website={usersList[5].website}
+          address={usersList[5].address}
+          company={usersList[5].company}
+      />
+      <User
+          id={usersList[6].id}
+          name={usersList[6].name}
+          surname={usersList[6].surname}
+          email={usersList[6].email}
+          phone={usersList[6].phone}
+          website={usersList[6].website}
+          address={usersList[6].address}
+          company={usersList[6].company}
+      />
+      <User
+          id={usersList[7].id}
+          name={usersList[7].name}
+          surname={usersList[7].surname}
+          email={usersList[7].email}
+          phone={usersList[7].phone}
+          website={usersList[7].website}
+          address={usersList[7].address}
+          company={usersList[7].company}
+      />
+      <User
+          id={usersList[8].id}
+          name={usersList[8].name}
+          surname={usersList[8].surname}
+          email={usersList[8].email}
+          phone={usersList[8].phone}
+          website={usersList[8].website}
+          address={usersList[8].address}
+          company={usersList[8].company}
+      />
+      <User
+          id={usersList[9].id}
+          name={usersList[9].name}
+          surname={usersList[9].surname}
+          email={usersList[9].email}
+          phone={usersList[9].phone}
+          website={usersList[9].website}
+          address={usersList[9].address}
+          company={usersList[9].company}
       />
     </div>
   );

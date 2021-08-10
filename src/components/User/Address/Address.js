@@ -5,7 +5,7 @@ export default function Address(props) {
 
     return(
       <div>
-          <h3>User's address</h3>
+          <h3><u>User's address</u></h3>
           <h4>street - {street}</h4>
           <h4>suite - {suite}</h4>
           <h4>city - {city}</h4>
