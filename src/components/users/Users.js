@@ -6,7 +6,7 @@ export default function Users() {
   let [users, setUsers] = useState([]);
 
   useEffect(() => {
-     getUsers().then(value => setUsers([...value]));
+     getUsers().then(({data}) => setUsers([...data]));
   }, []);
 
   return (
@@ -15,8 +15,6 @@ export default function Users() {
         {
             users.map(value => <User item={value} key={value.id}/>)
         }
-
-     {/*<User />*/}
     </div>
   );
 }
