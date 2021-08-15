@@ -1,0 +1,18 @@
+body {
+    background-color: lightgray;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.wrapper > div {
+    width: 45%;
+    background-color: cornsilk;
+}
+
+.chosen_user_block, .users_list {
+    padding: 20px;
+}
+
