@@ -8,13 +8,19 @@ body {
     background-color: azure;
 }
 
-.posts_wrap {
+.posts_wrap, .comments_wrap {
     display: flex;
     justify-content: space-between;
 }
 
-.posts_block, .post_details_block {
+.posts_wrap {
+    margin-bottom: 20px;
+}
+
+.posts_block, .post_details_block,
+.comments_block, .comments_details_block {
     width: 48%;
     background-color: cornsilk;
+    padding: 20px;
 }
 
