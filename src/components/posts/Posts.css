@@ -1,0 +1,20 @@
+* {
+    /*margin: 0;*/
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: azure;
+}
+
+.posts_wrap {
+    display: flex;
+    justify-content: space-between;
+}
+
+.posts_block, .post_details_block {
+    width: 48%;
+    background-color: cornsilk;
+}
+

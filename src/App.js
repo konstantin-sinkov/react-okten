@@ -1,3 +1,4 @@
+import Posts from "./components/posts/Posts";
 import './App.css';
 
 // 1 Отримати всі пости з jsonplaceholder та вивести їх. до кожного поста зробити кнопку при натисканні якої виводиться
@@ -9,7 +10,7 @@ import './App.css';
 function App() {
   return (
     <div>
-
+      <Posts />
     </div>
   );
 }
