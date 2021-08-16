@@ -1,5 +1,4 @@
 import Comment from "../comment/Comment";
-import {useState} from "react";
 
 export default function Comments({comments, chooseComment}) {
     // console.log(comments);

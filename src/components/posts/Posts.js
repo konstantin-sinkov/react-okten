@@ -8,7 +8,7 @@ import Comments from "../comments/Comments";
 import CommentDetails from "../comment_details/CommentDetails";
 
 
-export default function () {
+export default function Posts() {
 
     let [posts, setPosts] = useState([]);
     let [post, setPost] = useState(null);
