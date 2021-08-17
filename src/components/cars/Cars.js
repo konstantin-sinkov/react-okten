@@ -9,7 +9,7 @@ export default function Cars() {
     getCars().then(value => {
       setCars([...value]);
     });
-  }, [])
+  }, [cars])
 
   return (
     <div>
