@@ -1,4 +1,4 @@
-.users_list {
+.posts_list {
     padding: 20px;
     margin: 0 auto;
     margin-top: 10px;
@@ -6,7 +6,7 @@
     background-color: cornsilk;
 }
 
-.user_item {
+.post_item {
     margin: 10px 0;
 }
 
