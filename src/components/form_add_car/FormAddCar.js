@@ -1,5 +1,6 @@
 import {useState} from "react";
-import {saveCar} from "../../services/form.service";
+import {editCar, saveCar} from "../../services/form.service";
+import Cars from "../cars/Cars";
 
 export default function FormAddCar() {
     // let [formState, setFormState] = useState({model: '', price: '', year: ''});
@@ -45,6 +46,15 @@ export default function FormAddCar() {
         }
     }
 
+    const editChosenCar = (car) => {
+        // console.log(car);
+        setModel(car.model);
+        setYear(car.year);
+        setPrice(car.price);
+
+        editCar(car);
+    }
+
     return (
         <div>
             <h3><u>Form for adding a car</u></h3>
@@ -61,8 +71,11 @@ export default function FormAddCar() {
                     Enter production year
                     <input type="number" name={'year'} value={year} onChange={onYearInputChange}/>
                 </label></p>
-                <input type="submit"/>
+                <button type="submit">SAVE NEW CAR</button>
+                <button onClick={editChosenCar}>SAVE EDITED CAR</button>
             </form>
+
+            <Cars editChosenCar={editChosenCar}/>
 
         </div>
     );

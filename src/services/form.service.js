@@ -1,5 +1,7 @@
+const url = "http://195.72.146.25/api/v1/cars";
+
 let saveCar = (car) => {
-    return fetch("http://195.72.146.25/api/v1/cars", {
+    return fetch(url, {
         method: 'POST',
         body: JSON.stringify(car),
         headers: {
@@ -10,4 +12,16 @@ let saveCar = (car) => {
         .then((json) => console.log(json));
 }
 
-export {saveCar};
+let editCar = (car) => {
+    return fetch(url + '/' + car.id, {
+        method: 'PUT',
+        body: JSON.stringify(car),
+        headers: {
+            'Content-type': 'application/json; charset=UTF-8',
+        },
+    })
+        .then((response) => response.json())
+        .then((json) => console.log(json));
+}
+
+export {saveCar, editCar};
