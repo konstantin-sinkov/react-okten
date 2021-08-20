@@ -47,12 +47,18 @@ export default function FormAddCar() {
     }
 
     const editChosenCar = (car) => {
-        // e.preventDefault();
         // console.log(car);
-
+        // // event.preventDefault();
+        //
         setModel(car.model);
-        setYear(car.year);
-        setPrice(car.price);
+        setYear(car.year + 2);
+        setPrice(car.price + 3);
+        //
+        // let editedCar = {
+        //     'model': model,
+        //     'price': price + 2,
+        //     'year': year + 2
+        // }
 
         editCar(car);
     }
@@ -74,7 +80,10 @@ export default function FormAddCar() {
                     <input type="number" name={'year'} value={year} onChange={onYearInputChange}/>
                 </label></p>
                 <button onClick={save}>SAVE NEW CAR</button>
-                <button onClick={editChosenCar}>SAVE EDITED CAR</button>
+                <button onClick={(car, e) => {
+                    e.preventDefault();
+                    editChosenCar(car);
+                }}>SAVE EDITED CAR</button>
             </form>
 
             <Cars editChosenCar={editChosenCar}/>

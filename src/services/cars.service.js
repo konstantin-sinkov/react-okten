@@ -11,7 +11,7 @@ const deleteCar = (id) => {
     });
 }
 
-const editCar = () => {}
+// const editCar = () => {}
 
 
 export {getCars, deleteCar};

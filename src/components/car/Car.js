@@ -4,7 +4,7 @@ export default function Car({car, deleteChosenCar, setChosenCar}) {
       deleteChosenCar(car);
   }
 
-    const onClickEdit = () => {
+    const onClickChoose = () => {
         setChosenCar(car);
     }
 
@@ -14,7 +14,7 @@ export default function Car({car, deleteChosenCar, setChosenCar}) {
         <p>
             {car.id} model - {car.model}, price - {car.price}USD, year - {car.year}
             <button onClick={onClickDelete}>DELETE</button>
-            <button onClick={onClickEdit}>EDIT</button>
+            <button onClick={onClickChoose}>EDIT</button>
         </p>
 
     </div>
