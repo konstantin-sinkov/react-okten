@@ -13,7 +13,7 @@ let saveCar = (car) => {
 }
 
 let editCar = (car) => {
-    console.log(car, car.id);
+    // console.log(car, car.id);
     return fetch(url + '/' + car.id, {
         method: 'PUT',
         body: JSON.stringify(car),

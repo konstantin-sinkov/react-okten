@@ -47,12 +47,12 @@ export default function FormAddCar() {
     }
 
     const editChosenCar = (car) => {
-        // console.log(car);
-        // // event.preventDefault();
-        //
+        console.log(car.id);
+        // event.preventDefault();
+
         setModel(car.model);
-        setYear(car.year + 2);
-        setPrice(car.price + 3);
+        setYear(car.year);
+        setPrice(car.price);
         //
         // let editedCar = {
         //     'model': model,
