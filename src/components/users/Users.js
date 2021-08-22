@@ -2,8 +2,13 @@ import './Users.css';
 import {useEffect, useState} from "react";
 import {getUsers} from "../../services/users.service";
 import User from "../user/User";
+import UserDetails from "../userDetails/UserDetails";
+import {Route} from "react-router";
 
-export default function Users() {
+export default function Users(props) {
+    // console.log(props);
+    let {match: {url}} = props;
+
     let [users, setUsers] = useState([]);
 
     useEffect(() => {
@@ -22,6 +27,8 @@ export default function Users() {
                         user={el}
                     />)
             }
+
+            <Route path={`${url}/:id`} render={() => <UserDetails {...props} /> } />
         </div>
   );
 }

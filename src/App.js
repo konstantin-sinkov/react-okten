@@ -3,16 +3,16 @@ import './App.css';
 import Users from "./components/users/Users";
 import {Route} from "react-router";
 import Posts from "./components/posts/Posts";
-import Comments from "./components/comments/Comments";
+import UserDetails from "./components/userDetails/UserDetails";
 
-// Є три лінки
-// /users-page
-// /posts-page
-// /comments-page
-// При кліку на відповідну лінку
-// відбувається перехід на відповідний компонент,
-// який дістає з jsonplaceholder інформацію про відповідні
-// стуності, та виводить їх повний список
+// Є дві лінки
+// /users
+// /posts
+//
+// /users - робить все те, що було на занятті останнім способом (через кнопку та ддатковий запит на сервер)
+// /posts - Отримує posts з jsobplaceholder, виводить їх всі.
+// Біля кожного поста зробити лінку (не конопку) яка буде вести на детальну інформацію поста. Детальну інформацію
+// отримувати через history.state
 
 
 function App() {
@@ -21,14 +21,12 @@ function App() {
           <div className={'nav_bar'}>
             <Link to={'/users'}>Users</Link>
             <Link to={'/posts'}>Posts</Link>
-            <Link to={'/comments'}>Comments</Link>
           </div>
-          <Route path={'/users'} render={() => <Users/>} />
-          <Route path={'/posts'} render={() => <Posts/>} />
-          <Route path={'/comments'} render={() => <Comments/>} />
+          <Route path={'/users'} component={Users} /*>render={() => <Users/>}*/ />
+          <Route path={'/posts'} component={Posts} /*render={() => <Posts/>}*/ />
       </Router>
 
   );
-};
+}
 
 export default App;
