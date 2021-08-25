@@ -1,16 +1,18 @@
+import {BrowserRouter as Router, Link} from "react-router-dom"
 import './App.css';
+import Users from "./components/users/Users";
+import {Route} from "react-router";
+import Posts from "./components/posts/Posts";
 
-// 1 Отримати всі пости з jsonplaceholder та вивести їх. до кожного поста зробити кнопку при натисканні якої виводиться
-// біль детальна інформація про пост в середині Posts компоненти
 
-// 2 Отримати всі коментарі з jsonplaceholder та вивести їх. до кожного поста зробити кнопку при натисканні якої
-// виводиться біль детальна інформація про коментар в середині Comments компоненти
+
 
 function App() {
   return (
-    <div>
+      <div>
 
-    </div>
+      </div>
+
   );
 }
 
