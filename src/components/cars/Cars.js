@@ -11,7 +11,7 @@ export default function Cars() {
     getCars().then(value => {
       setCars([...value]);
     });
-  }, )
+  }, [])
 
   const addCarToList = (car) => {
     // setCar({...car});
