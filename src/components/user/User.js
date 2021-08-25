@@ -1,14 +1,14 @@
 import {Link} from "react-router-dom";
 
-export default function User({user}) {
+export default function User({user, history}) {
   const goToUserPage = () => {
-
+      history.push('/users/' + user.id)
   }
 
   return (
     <div className={"user_item"}>
       <p>{user.id} -- {user.name}</p>
-      <button> <Link to={'/users/' + user.id}>USER DETAILS </Link></button>
+      <button onClick={goToUserPage}>USER DETAILS</button>
     </div>
   );
 }

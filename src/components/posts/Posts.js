@@ -6,7 +6,7 @@ import {Route} from "react-router";
 import PostDetails from "../postDetails/PostDetails";
 
 export default function Posts(props) {
-  let {match: {url}} = props;
+  let {match: {url}, history} = props;
 
   let [posts, setPosts] = useState([]);
 
@@ -24,11 +24,11 @@ export default function Posts(props) {
                 <Post
                     key={el.id}
                     post={el}
-                    url={url}
+                    history={history}
                 />
             )
         }
-        <Route path={`${url}/:id`} render={() => <PostDetails/>} />
+        <Route path={`${url}/:id`} render={(props) => <PostDetails {...props}/>} />
     </div>
   );
 }

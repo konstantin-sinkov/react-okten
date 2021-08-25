@@ -3,11 +3,12 @@ import {useEffect, useState} from "react";
 import {getUsers} from "../../services/users.service";
 import User from "../user/User";
 import UserDetails from "../userDetails/UserDetails";
-import {Route} from "react-router";
+import {Route, Switch} from "react-router";
 
 export default function Users(props) {
     // console.log(props);
-    let {match: {url}} = props;
+    let {match: {url}, history} = props;
+    // console.log(url);
 
     let [users, setUsers] = useState([]);
 
@@ -25,10 +26,13 @@ export default function Users(props) {
                     <User
                         key={el.id}
                         user={el}
+                        history={history}
                     />)
             }
 
-            <Route path={`${url}/:id`} render={() => <UserDetails {...props} /> } />
+            <Switch>
+                <Route path={`${url}/:id`} render={(props) => <UserDetails {...props}/>}/>
+            </Switch>
         </div>
   );
 }

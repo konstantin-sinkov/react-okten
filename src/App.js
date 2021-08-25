@@ -3,7 +3,6 @@ import './App.css';
 import Users from "./components/users/Users";
 import {Route} from "react-router";
 import Posts from "./components/posts/Posts";
-import UserDetails from "./components/userDetails/UserDetails";
 
 // Є дві лінки
 // /users
@@ -22,8 +21,8 @@ function App() {
             <Link to={'/users'}>Users</Link>
             <Link to={'/posts'}>Posts</Link>
           </div>
-          <Route path={'/users'} component={Users} /*>render={() => <Users/>}*/ />
-          <Route path={'/posts'} component={Posts} /*render={() => <Posts/>}*/ />
+          <Route path={'/users'} component={Users} />
+          <Route path={'/posts'} component={Posts} />
       </Router>
 
   );
