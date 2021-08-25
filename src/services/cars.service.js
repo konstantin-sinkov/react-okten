@@ -1,17 +1,20 @@
-const url = "http://195.72.146.25/api/v1/cars";
+const url = "http://91.201.233.14/api/v1/cars";
 
 const getCars = () => {
     return fetch(url)
         .then(value => value.json());
 }
 
+const getCar = (id) => {
+    return fetch(url + '/' + id)
+        .then(value => value.json());
+}
+
 const deleteCar = (id) => {
-    fetch(url + '/' + id, {
+    return fetch(url + '/' + id, {
         method: 'DELETE',
     });
 }
 
-// const editCar = () => {}
 
-
-export {getCars, deleteCar};
+export {getCars, deleteCar, getCar};

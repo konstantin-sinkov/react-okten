@@ -1,4 +1,4 @@
-const url = "http://195.72.146.25/api/v1/cars";
+const url = "http://91.201.233.14/api/v1/cars";
 
 let saveCar = (car) => {
     return fetch(url, {
@@ -13,7 +13,6 @@ let saveCar = (car) => {
 }
 
 let editCar = (car) => {
-    // console.log(car, car.id);
     return fetch(url + '/' + car.id, {
         method: 'PUT',
         body: JSON.stringify(car),
@@ -25,4 +24,6 @@ let editCar = (car) => {
         .then((json) => console.log(json));
 }
 
+
 export {saveCar, editCar};
+

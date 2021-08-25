@@ -19,7 +19,7 @@ import Cars from "./components/cars/Cars";
 function App() {
   return (
     <div>
-      <FormAddCar />
+      <Cars />
     </div>
   );
 }

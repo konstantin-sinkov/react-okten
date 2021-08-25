@@ -1,92 +1,60 @@
 import {useState} from "react";
-import {editCar, saveCar} from "../../services/form.service";
-import Cars from "../cars/Cars";
+import {saveCar, editCar} from "../../services/form.service";
 
-export default function FormAddCar() {
-    // let [formState, setFormState] = useState({model: '', price: '', year: ''});
+export default function FormAddCar({car, cars, addCarToList}) {
+    let [formState, setFormState] = useState({model: '', price: '', year: ''});
 
-    // let onFormInputChange = (e) => {
-    //     setFormState({...formState, [e.target.name]: e.target.value});
-    // }
-
-    let [model, setModel] = useState('');
-    let [price, setPrice] = useState('');
-    let [year, setYear] = useState('');
-
-    let onModelInputChange = (e) => {
-        setModel(e.target.value);
+    let onFormInputChange = (e) => {
+        setFormState({...formState, [e.target.name]: e.target.value});
     }
 
-    let onPriceInputChange = (e) => {
-        setPrice(e.target.value);
-    }
-
-    let onYearInputChange = (e) => {
-        setYear(e.target.value);
-    }
-
-    let save = (e) => {
-        e.preventDefault();
-        if (!model.length || model.length > 20) {
-            alert('Model name should be less than 20 symbols');
-        } else if (price < 0) {
-            alert('Price should be grater than 0');
-        } else if (year < 1990 || year > 2021) {
-            alert('Enter valid produce year (1990 - 2021)');
-        } else {
-        const car = {
-            'model': model,
-            'price': price,
-            'year': year
-        }
-        saveCar(car);
-        setModel('');
-        setPrice('');
-        setYear('');
-        }
+    const saveCarToList = (car) => {
+        addCarToList(car);
     }
 
     const editChosenCar = (car) => {
-        console.log(car.id);
-        // event.preventDefault();
-
-        setModel(car.model);
-        setYear(car.year);
-        setPrice(car.price);
-        //
-        // let editedCar = {
-        //     'model': model,
-        //     'price': price + 2,
-        //     'year': year + 2
-        // }
-
-        editCar(car);
+        console.log(car);
+        setFormState({model: car.model, price: car.price, year: car.year});
     }
 
+
+    let save = (e) => {
+        e.preventDefault();
+        if (!formState.model.length || formState.model.length > 20) {
+            alert('Model name should be less than 20 symbols');
+        } else if (formState.price < 0) {
+            alert('Price should be grater than 0');
+        } else if (formState.year < 1990 || formState.year > 2021) {
+            alert('Enter valid produce year (1990 - 2021)');
+        } else {
+
+            saveCar(formState);
+            saveCarToList(formState);
+            setFormState({model: '', price: '', year: ''});
+            // setModel('');
+            // setPrice('');
+            // setYear('');
+        }
+    }
     return (
         <div>
             <h3><u>Form for adding a car</u></h3>
-            <form>
+            <form onSubmit={save}>
                 <p><label>
                     Enter car model
-                    <input type="text" name={'model'} value={model} onChange={onModelInputChange}/>
+                    <input type="text" name={'model'} value={formState.model} onChange={onFormInputChange}/>
                 </label></p>
                 <p><label>
                     Enter car price
-                    <input type="number" name={'price'} value={price} onChange={onPriceInputChange}/>
+                    <input type="number" name={'price'} value={formState.price} onChange={onFormInputChange}/>
                 </label></p>
                 <p><label>
                     Enter production year
-                    <input type="number" name={'year'} value={year} onChange={onYearInputChange}/>
+                    <input type="number" name={'year'} value={formState.year} onChange={onFormInputChange}/>
                 </label></p>
-                <button onClick={save}>SAVE NEW CAR</button>
-                <button onClick={(car, e) => {
-                    e.preventDefault();
-                    editChosenCar(car);
-                }}>SAVE EDITED CAR</button>
+                <input type="submit"/>
+                <button onClick={editChosenCar}>SAVE EDITED CAR</button>
             </form>
-
-            <Cars editChosenCar={editChosenCar}/>
 
         </div>
     );

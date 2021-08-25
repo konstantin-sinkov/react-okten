@@ -1,22 +1,32 @@
-export default function Car({car, deleteChosenCar, setChosenCar}) {
+import {useEffect, useState} from "react";
+import {getCar, getCars} from "../../services/cars.service";
 
-  const onClickDelete = () => {
-      deleteChosenCar(car);
-  }
+export default function Car({item, deleteChosenCar, setChosenCar}) {
+    let id = item.id;
 
-    const onClickChoose = () => {
-        setChosenCar(car);
+    let [car, setCar] = useState({});
+
+
+
+    const onClickDelete = () => {
+        deleteChosenCar(item);
     }
 
+    const onClickEdit = () => {
+        console.log(item.id);
 
-  return (
-    <div>
-        <p>
-            {car.id} model - {car.model}, price - {car.price}USD, year - {car.year}
+        // getCar(item.id).then(value => {
+        //     setCar({...car});
+        // })
+        // setChosenCar(car);
+    }
+
+    return (
+        <div>
+            <p>#{item.id} model - {item.model}, price - {item.price}USD, year - {item.year}</p>
             <button onClick={onClickDelete}>DELETE</button>
-            <button onClick={onClickChoose}>EDIT</button>
-        </p>
+            <button onClick={onClickEdit}>EDIT</button>
+        </div>
 
-    </div>
-  );
+    );
 }

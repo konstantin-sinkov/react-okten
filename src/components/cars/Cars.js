@@ -1,8 +1,9 @@
 import {useEffect, useState} from "react";
-import {deleteCar, getCars} from "../../services/cars.service";
+import {getCars, deleteCar} from "../../services/cars.service";
 import Car from "../car/Car";
+import FormAddCar from "../form_add_car/FormAddCar";
 
-export default function Cars({editChosenCar}) {
+export default function Cars() {
   let [cars, setCars] = useState([]);
   let [car, setCar] = useState({});
 
@@ -10,31 +11,43 @@ export default function Cars({editChosenCar}) {
     getCars().then(value => {
       setCars([...value]);
     });
-  }, [cars]);
+  }, )
+
+  const addCarToList = (car) => {
+    // setCar({...car});
+    cars.push(car);
+    cars.sort((car1, car2) => car1.id - car2.id);
+  }
 
   const deleteChosenCar = (car) => {
-    setCar({...car});
+    // setCar({...car});
     // console.log(car);
     deleteCar(car.id);
+    let filteredCars = cars.filter(el => el.id !== car.id);
+    setCars([...filteredCars]);
   }
 
   const setChosenCar = (car) => {
     setCar({...car});
-    editChosenCar(car);
   }
 
   return (
-    <div>
-      <h3><u>Cars list</u></h3>
-      {
-        cars.map(el =>
-            <Car
-                key={el.id}
-                car={el}
-                deleteChosenCar={deleteChosenCar}
-                setChosenCar={setChosenCar}
-            />)
-      }
-    </div>
+      <div>
+        <FormAddCar
+            cars={cars}
+            car={car}
+            addCarToList={addCarToList}
+        />
+        <h3><u>Cars list</u></h3>
+        {
+          cars.map(el =>
+              <Car
+                  key={el.id}
+                  item={el}
+                  deleteChosenCar={deleteChosenCar}
+                  setChosenCar={setChosenCar}
+              />)
+        }
+      </div>
   );
 }
