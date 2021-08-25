@@ -1,9 +1,0 @@
-.nav_bar {
-    background-color: azure;
-    display: flex;
-}
-
-.nav_bar a {
-    display: block;
-    margin: 10px;
-}
