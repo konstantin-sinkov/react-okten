@@ -1,5 +1,3 @@
-import {Link} from "react-router-dom";
-
 export default function Post({post, history}) {
     const goToPostPage = () => {
         history.push('/posts/' + post.id)
