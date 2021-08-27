@@ -1,8 +1,6 @@
-import {BrowserRouter as Router, Link} from "react-router-dom"
 import './App.css';
-import Users from "./components/users/Users";
-import {Route} from "react-router";
-import Posts from "./components/posts/Posts";
+import { useReducer } from 'react';
+import reducer from "./reducers/reducer";
 
 // є об'єкт, значення якого 0
 // Стоврити 2 кнопки.
@@ -13,12 +11,19 @@ import Posts from "./components/posts/Posts";
 
 
 function App() {
-  return (
-     <div>
+    // let counter;
+    const initialState = {counter: 0};
+    let [state, dispatch] = useReducer(reducer, initialState);
 
-     </div>
+    return (
+        <div>
+            <h2>Counter</h2>
+            <h3>Counter value - {state.counter}</h3>
+            <button onClick={() => dispatch({type: 'ADD_10'})}>Add 10</button>
+            <button onClick={() => dispatch({type: 'SUB_2'})}>Subs 2</button>
+        </div>
 
-  );
+    );
 }
 
 export default App;
