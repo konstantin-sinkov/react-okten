@@ -1,15 +1,14 @@
-import {Link, useHistory} from "react-router-dom";
-import {useState} from "react";
+import {Link} from "react-router-dom";
 
-export default function Post({post, url}) {
-  let history = useHistory();
-  console.log(url);
+export default function Post({post, history}) {
+    const goToPostPage = () => {
+        history.push('/posts/' + post.id)
+    }
 
-  return (
-    <div className={'post_item'}>
-      <p>{post.id} -- {post.title}</p>
-
-      <Link to={`${url}/${post.id}`}>Post details</Link>
-    </div>
-  );
+    return (
+        <div className={"post_item"}>
+            <p>{post.id} -- {post.title}</p>
+            <button onClick={goToPostPage}>Post DETAILS</button>
+        </div>
+    );
 }

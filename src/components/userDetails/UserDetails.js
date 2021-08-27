@@ -3,7 +3,7 @@ import {useEffect, useState} from "react";
 import {getUser} from "../../services/users.service";
 
 export default function UserDetails({history, match: {params: {id}}}) {
-  // let userId = useParams('id');
+
   let [user, setUser] = useState({});
 
   useEffect(() => {

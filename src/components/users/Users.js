@@ -30,9 +30,7 @@ export default function Users(props) {
                     />)
             }
 
-            <Switch>
-                <Route path={`${url}/:id`} render={(props) => <UserDetails {...props}/>}/>
-            </Switch>
+            <Route path={`${url}/:id`} render={(props) => <UserDetails {...props}/>}/>
         </div>
   );
 }
