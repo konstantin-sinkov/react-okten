@@ -5,4 +5,15 @@ const getUsers = () => {
         .then(value => value.json());
 }
 
-export {getUsers};
+const addUser = (user) => {
+    return fetch(url, {
+        method: 'POST',
+        headers: {
+            'Accept': 'application/json',
+            'Content-type': 'application/json'
+        },
+        body: JSON.stringify(user)
+    }).then(value => value.json())
+}
+
+export {getUsers, addUser};
